@@ -23,28 +23,29 @@
 
     body::before {
       content: "";
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       background-image: url('./pokemerald.gif'); /* <--- Replace this */
-      background-size: cover;
-      background-position: center;
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-position: 10% 50%;
       z-index: -1;
       opacity: 1; /* adjust visibility of GIF */
     }
 
     .time {
-      font-size: 4.5em;
-      font-weight: bold;
+      font-size: 5.3em;
+      font-weight: 850;
       letter-spacing: 2px;
       text-shadow: 0 0 10px #54e680, 0 0 20px #54e680;
     }
 
     .date {
       font-size: 3em;
-      font-weight: bold;
+      font-weight: 750;
       opacity: 0.8;
       text-shadow: 0 0 6px #54e680;
     }
