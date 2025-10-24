@@ -37,23 +37,39 @@
     }
 
     .time {
-      font-size: 5.3em;
+      font-size: 7em;
       font-weight: 850;
       letter-spacing: 2px;
-      text-shadow: 0 0 10px #54e680, 0 0 20px #54e680;
+      text-shadow: 0 0 10px #54e680, 0 0 10px #54e680;
     }
 
     .date {
-      font-size: 3em;
+      font-size: 3.5em;
       font-weight: 750;
-      opacity: 0.8;
-      text-shadow: 0 0 6px #54e680;
+      text-shadow: 0 0 10px #54e680;
+    }
+    .meridiem{
+      margin-left: 10px;
+      font-size: 3em;
+      font-weight: 850;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px #54e680, 0 0 10px #54e680;
+    }
+    
+    .container{
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      flex-direction: row;
     }
   </style>
 
 </head>
 <body>
-  <div class="time" id="time">--:--</div>
+  <div class="container">
+    <div class="time" id="time">--:--</div>
+    <div class="meridiem" id="meridiem"></div>
+  </div>
   <div class="date" id="date">Loading...</div>
 
   <script>
@@ -68,7 +84,8 @@
       const ampm = hours >= 12 ? 'PM' : 'AM';
       hours = hours % 12 || 12;
 
-      document.getElementById('time').textContent = `${hours}:${minutes} ${ampm}`;
+      document.getElementById('time').textContent = `${hours}:${minutes}`;
+      document.getElementById('meridiem').textContent = `${ampm}`;
       document.getElementById('date').textContent = now.toLocaleDateString(undefined, options);
     }
 
